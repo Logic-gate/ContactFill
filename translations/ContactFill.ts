@@ -2,13 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>My Cover</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FirstPage</name>
     <message>
         <source>Search By </source>
@@ -32,6 +25,29 @@
     </message>
     <message>
         <source>GitHub Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>api</name>
+    <message>
+        <source>API KEY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get Your API KEY here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FullContact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For this to work, you&apos;ll need a developer API KEY</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

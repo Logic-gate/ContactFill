@@ -30,12 +30,13 @@
 
 #ifdef QT_QML_DEBUG
 #include <QtQuick>
+#include <QtQml>
 #endif
 
 #include <sailfishapp.h>
+#include "fileio.h"
 
-
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     // SailfishApp::main() will display "qml/template.qml", if you need more
     // control over initialization, you can use:
@@ -45,7 +46,9 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
-
+    qmlRegisterType<FileIO, 1>("FileIO", 1, 0, "FileIO");
     return SailfishApp::main(argc, argv);
 }
+
+
 

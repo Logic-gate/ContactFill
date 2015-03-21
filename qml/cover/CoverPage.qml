@@ -30,25 +30,21 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import '../pages'
 
 CoverBackground {
-    Label {
+    id: coverPage
+  //  property alias social_header: label.text
+
+ //   PersonPage {
+   //     id: personPage
+  //  }
+
+   Label {
         id: label
         anchors.centerIn: parent
-        text: qsTr("My Cover")
-    }
+        text: 'ContactFill'}
 
-    CoverActionList {
-        id: coverAction
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
-        }
-    }
 }
 
 

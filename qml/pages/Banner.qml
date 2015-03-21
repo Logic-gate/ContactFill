@@ -21,6 +21,8 @@ MouseArea {
         anchors.fill: parent
     }
 
+
+
     Timer {
         id: hideTimer
         triggeredOnStart: false
@@ -45,7 +47,7 @@ MouseArea {
         if (color && (typeof(color) != "undefined"))
             bg.color = color
         else
-            bg.color = Theme.rgba(Theme.highlightBackgroundColor, 1)
+            bg.color = Theme.highlightBackgroundColor
         show()
     }
 
@@ -58,8 +60,10 @@ MouseArea {
         anchors.right: parent.right
         anchors.rightMargin: Theme.paddingLarge
         horizontalAlignment: Text.AlignHCenter
+        color: "black"
         elide: Text.ElideRight
-        wrapMode: Text.Wrap
+
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
     }
 
     onClicked: hide()

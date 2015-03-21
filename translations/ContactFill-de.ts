@@ -5,7 +5,7 @@
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <translation type="vanished">Mein Cover</translation>
     </message>
 </context>
 <context>
@@ -44,6 +44,10 @@
     </message>
     <message>
         <source>GitHub Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -86,6 +90,25 @@
     <message>
         <source>Item</source>
         <translation type="vanished">Element</translation>
+    </message>
+</context>
+<context>
+    <name>api</name>
+    <message>
+        <source>API KEY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get Your API KEY here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FullContact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For this to work, you&apos;ll need a developer API KEY</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

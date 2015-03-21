@@ -34,12 +34,18 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import FileIO 1.0
 
 Page {
     id: page
     signal send(string txt)
     SilicaListView {
-
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("api.qml"))
+             }
+         }
     anchors.fill: parent
         header: PageHeader {
 
@@ -104,12 +110,17 @@ Page {
 
                 }
 
+                FileIO {
+                    id: myFile
+                    source: "/home/nemo/ContactFill.key"
+                    onError: console.log(msg)
+                }
                 Button {
                     id: send_url
                     text: "Search"
                     anchors.horizontalCenter: parent.horizontalCenter
                   // onClicked: console.log(field.text + hidden_field.text)
-                    onClicked: pageStack.push(Qt.resolvedUrl('PersonPage.qml'), {api:'person', api_key:' ', search_method:field.text, param:hidden_field.text})
+                    onClicked: pageStack.push(Qt.resolvedUrl('PersonPage.qml'), {api:'person', api_key:myFile.read(), search_method:field.text, param:hidden_field.text})
                 }
             }
 

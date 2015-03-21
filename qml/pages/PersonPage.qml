@@ -65,10 +65,15 @@ SilicaFlickable {
         spacing: Theme.paddingMedium
         PageHeader { title: 'Results' }
         SectionHeader {
+            id: social_header
+            visible: false
             text: "Social Info"
             font.pixelSize: Theme.fontSizeExtraMeduim
 
         }
+
+
+
     Repeater {
         id: social_data
 
@@ -93,6 +98,7 @@ SilicaFlickable {
 
                   Label {
                       id: image_type_ //Image Source
+                      onTextChanged: {social_header.visible=true}
                       text: image_type
                       color: Theme.highlightColor
                       font.pixelSize: Theme.fontSizeExtraSmall
@@ -144,7 +150,9 @@ SilicaFlickable {
         }
     }
     SectionHeader {
+        id: personal_header
         text: "Personal"
+        visible: false
         font.pixelSize: Theme.fontSizeExtraMeduim
 
     }
@@ -163,6 +171,7 @@ SilicaFlickable {
                  Label {
                      id: contactInfo_Name //Fullname
                      text: fullname_
+                     onTextChanged: {personal_header.visible=true}
                      color: Theme.highlightColor
                      font.pixelSize: Theme.fontSizeExtraSmall
                      anchors {
@@ -185,6 +194,7 @@ SilicaFlickable {
                   }
 
         }
+
     }
 
 
@@ -199,7 +209,7 @@ SilicaFlickable {
           }
             else if (xmlhttp.readyState == 4 && xmlhttp.status == 404) {
                 var not_found = JSON.parse(xmlhttp.responseText);
-                column.status_code = not_found.message;
+                banner.notify(qsTr(not_found.message))
 
                 }
       }

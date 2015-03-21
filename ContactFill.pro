@@ -14,7 +14,8 @@ TARGET = ContactFill
 
 CONFIG += sailfishapp
 
-SOURCES += src/ContactFill.cpp
+SOURCES += src/ContactFill.cpp \
+    src/fileio.cpp
 
 OTHER_FILES += qml/ContactFill.qml \
     qml/cover/CoverPage.qml \
@@ -27,7 +28,8 @@ OTHER_FILES += qml/ContactFill.qml \
     qml/js/FullContact.js \
     qml/js/fullcontact.js \
     qml/pages/PersonPage.qml \
-    qml/pages/Banner.qml
+    qml/pages/Banner.qml \
+    qml/pages/api.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -38,4 +40,7 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/ContactFill-de.ts
+
+HEADERS += \
+    src/fileio.h
 
