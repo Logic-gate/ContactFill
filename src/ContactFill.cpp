@@ -35,6 +35,7 @@
 
 #include <sailfishapp.h>
 #include "fileio.h"
+#include <QtQml>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {

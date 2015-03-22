@@ -33,6 +33,13 @@
     </message>
 </context>
 <context>
+    <name>PersonPage</name>
+    <message>
+        <source>Bad Request, Please try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>api</name>
     <message>
         <source>API KEY</source>

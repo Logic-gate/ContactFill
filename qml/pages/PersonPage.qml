@@ -48,6 +48,9 @@ Page {
         id: banner
     }
 
+
+
+
 SilicaFlickable {
     anchors.fill: parent
     contentWidth: parent.width
@@ -67,7 +70,7 @@ SilicaFlickable {
         SectionHeader {
             id: social_header
             visible: false
-            text: "Social Info"
+            text: "Photos"
             font.pixelSize: Theme.fontSizeExtraMeduim
 
         }
@@ -78,7 +81,7 @@ SilicaFlickable {
         id: social_data
 
         model: ListModel {
-            id: listModel
+            id: imageModel
         }
 
         delegate: Item {
@@ -118,26 +121,53 @@ SilicaFlickable {
                           baseline: image_type_.baseline
                       }
                       text: 'Primary: '+ isPrimary
+                      onTextChanged: {social_header.visible=true}
                       color: Theme.highlightColor
                       font.pixelSize: Theme.fontSizeExtraSmall
                   }
 
+        }
+    }
+
+    SectionHeader {
+        id: soc_info
+        text: "Social Info."
+        visible: false
+        font.pixelSize: Theme.fontSizeExtraMeduim
+    }
+
+    Repeater {
+        id: social_
+
+        model: ListModel {
+            id: socialModel
+        }
+
+        delegate: Item {
+                    x: Theme.paddingLarge
+                    width: parent.width - 2*Theme.paddingLarge
+                    height: childrenRect.height
+
+
+
                   Label {
                       id: social //Social data
-                      horizontalAlignment: Text.AlignRight
+                      onTextChanged: {soc_info.visible=true}
+                      horizontalAlignment: Text.AlignLeft
                       text: 'User Name for '+typeName + ' is '+ username_
                       color: Theme.highlightColor
                       font.pixelSize: Theme.fontSizeExtraSmall
                       anchors {
-                          top: image_f.bottom
+                          top: soc_info.bottom
                           left: parent.left
                           right: parent.right
                       }
                   }
 
-                  Label {
+                  Text {
                       id: social_url //Social Profile URL
                       horizontalAlignment: Text.AlignRight
+                      onTextChanged: {soc_info.visible=true}
                       text: url_
                       color: Theme.secondaryHighlightColor
                       font.pixelSize: Theme.fontSizeExtraSmall
@@ -146,21 +176,27 @@ SilicaFlickable {
                           left: parent.left
                           right: parent.right
                       }
+                      onLinkActivated: {
+                            Qt.openUrlExternally(url_);
+                      }
+
                   }
         }
     }
+
+
     SectionHeader {
-        id: personal_header
-        text: "Personal"
+        id: name_header
+        text: "Contact Name"
         visible: false
         font.pixelSize: Theme.fontSizeExtraMeduim
 
     }
     Repeater {
-        id: personal_data
+        id: name_data
 
         model: ListModel {
-            id: listModel_2
+            id: nameModel
         }
 
         delegate: Item {
@@ -169,21 +205,76 @@ SilicaFlickable {
                     height: childrenRect.height
 
                  Label {
-                     id: contactInfo_Name //Fullname
-                     text: fullname_
-                     onTextChanged: {personal_header.visible=true}
+                     id: contactInfo_FullName //Fullname
+                     text: 'Full Name: '+fullname_
+                     horizontalAlignment: Text.AlignRight
+                     onTextChanged: {name_header.visible=true}
                      color: Theme.highlightColor
                      font.pixelSize: Theme.fontSizeExtraSmall
                      anchors {
                         left: parent.left
-                        right: contactInfo_website.left
                         rightMargin: Theme.paddingSmall
                         topMargin: 10
                         }
                     }
 
+                 Label {
+                     id: contactInfo_Name //Fullname
+                     text: 'Family Name: '+ familyname_
+                     horizontalAlignment: Text.AlignRight
+                   onTextChanged: {name_header.visible=true}
+                     color: Theme.highlightColor
+                     font.pixelSize: Theme.fontSizeExtraSmall
+                     anchors {
+                        left: parent.left
+                        right: contactInfo_FullName.left
+                        rightMargin: Theme.paddingSmall
+                        topMargin: 10
+                        }
+                    }
+
+                 Label {
+                     id: contactInfo_givenName //Fullname
+                     text: 'Given Name: '+ givenName_
+                     horizontalAlignment: Text.AlignRight
+                   onTextChanged: {name_header.visible=true}
+                     color: Theme.highlightColor
+                     font.pixelSize: Theme.fontSizeExtraSmall
+                     anchors {
+                        left: parent.left
+                        right: contactInfo_Name.left
+                        rightMargin: Theme.paddingSmall
+                        topMargin: 10
+                        }
+                    }
+
+
+        }
+
+    }
+
+    SectionHeader {
+        id: website_header
+        text: "Websites"
+        visible: false
+        font.pixelSize: Theme.fontSizeExtraMeduim
+
+    }
+    Repeater {
+        id: website_data
+
+        model: ListModel {
+            id: websiteModel
+        }
+
+        delegate: Item {
+                    x: Theme.paddingLarge
+                    width: parent.width - 2*Theme.paddingLarge
+                    height: childrenRect.height
+
                   Label {
                       id: contactInfo_website //websites
+                      onTextChanged: {website_header.visible=true}
                       text: websites_
                       color: Theme.secondaryHighlightColor
                       font.pixelSize: Theme.fontSizeExtraSmall
@@ -206,12 +297,19 @@ SilicaFlickable {
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 myFunction(xmlhttp.responseText);
+                progressCircle.destroy()
           }
             else if (xmlhttp.readyState == 4 && xmlhttp.status == 404) {
                 var not_found = JSON.parse(xmlhttp.responseText);
-                banner.notify(qsTr(not_found.message))
+                banner.notify(qsTr(not_found.message));
+                 progressCircle.destroy()
 
                 }
+            else if (xmlhttp.readyState == 4 && xmlhttp.status == 400){
+                banner.notify(qsTr('Bad Request, Please try again'));
+                 progressCircle.destroy()
+
+            }
       }
         xmlhttp.open("GET", url_made, true);
         xmlhttp.send();
@@ -222,30 +320,67 @@ SilicaFlickable {
     function myFunction(json) {
         var obj = JSON.parse(json);
 
-        for (var i = 0; i < obj.photos.length && i < obj.socialProfiles.length; i++) {
-            var das_auto = {
+        if (obj.photos.length != 1){
+        for (var i = 0; i < obj.photos.length; i++) {
+            var multi_image = {
                 image_source: obj.photos[i].url,
                 image_type: obj.photos[i].typeName,
-                isPrimary: obj.photos[i].isPrimary,
-                typeName: obj.socialProfiles[i].typeName,
-                url_: obj.socialProfiles[i].url,
-                username_: obj.socialProfiles[i].username}
-                listModel.append(das_auto)
+                isPrimary: obj.photos[i].isPrimary}
+                imageModel.append(multi_image)
         };
+        }
+        else if (obj.photos.length = 1){
+               var one_image = {
+                image_source: obj.photos[0].url,
+                image_type: obj.photos[0].typeName,
+                isPrimary: obj.photos[0].isPrimary,
+            }
+            imageModel.append(one_image)
+
+        }
+        if (obj.socialProfiles.length != 1){
+            for (var s = 0; s < obj.socialProfiles.length; s++) {
+                var multi_social = {
+                    typeName: obj.socialProfiles[s].typeName,
+                    url_: obj.socialProfiles[s].url,
+                    username_: obj.socialProfiles[s].username
+                }
+                    socialModel.append(multi_social)
+
+            }
+
+        }
+         else if (obj.socialProfiles.length = 1){
+            var one_social = {
+                typeName: obj.socialProfiles.typeName,
+                url_: obj.socialProfiles.url,
+                username_: obj.socialProfiles.username
+            }
+                socialModel.append(one_social)
+            }
+
 
         if (obj.contactInfo.websites.length != 1){
         for (var ii = 0; ii < obj.contactInfo.websites.length;  ii++) {
-            var das_auto_vw = {websites_: obj.contactInfo.websites[i].url, fullname_: obj.contactInfo.fullName};
+            var multi_websites = {websites_: obj.contactInfo.websites[i].url};
             console.log(obj.contactInfo.websites[i].url)
-              listModel_2.append(das_auto_vw)
+              websiteModel.append(multi_websites)
         }
         }
 
         else if (obj.contactInfo.websites.length = 1) {
-            var das_auto_vw2 = {websites_: obj.contactInfo.websites[0].url, fullname_: obj.contactInfo.fullName};
-            listModel_2.append(das_auto_vw2);
+            var one_website = {websites_: obj.contactInfo.websites[0].url};
+            websiteModel.append(one_website);
 
         }
+
+        if (obj.contactInfo.websites.length = 1) {
+                    var name_data = {fullname_: obj.contactInfo.fullName, familyName_: obj.contactInfo.familyName, givenName_: obj.contactInfo.givenName};
+                    nameModel.append(name_data);
+
+                }
+
+
         banner.notify(qsTr('Likelihood: '+ obj.likelihood))
 
 

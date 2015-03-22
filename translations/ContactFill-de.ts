@@ -80,6 +80,10 @@
         <source>Hello Sailors</source>
         <translation type="obsolete">Hallo Matrosen</translation>
     </message>
+    <message>
+        <source>Bad Request, Please try again</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SecondPage</name>
