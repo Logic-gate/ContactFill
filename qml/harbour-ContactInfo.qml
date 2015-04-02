@@ -30,25 +30,12 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import '../pages'
+import "pages"
 
-CoverBackground {
-    id: coverPage
-  //  property alias social_header: label.text
-
- //   PersonPage {
-   //     id: personPage
-  //  }
-
-    Image {
-        source: '../img/mainpage.png'
-        width: 180
-            fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
-            smooth: true
-
-    }
-
+ApplicationWindow
+{
+    initialPage: Component { MainPage { } }
+    cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }
 
 

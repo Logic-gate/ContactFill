@@ -28,27 +28,25 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
-import Sailfish.Silica 1.0
-import '../pages'
+#ifdef QT_QML_DEBUG
+#include <QtQuick>
+#include <QtQml>
+#endif
 
-CoverBackground {
-    id: coverPage
-  //  property alias social_header: label.text
+#include <sailfishapp.h>
+#include "fileio.h"
+#include <QtQml>
 
- //   PersonPage {
-   //     id: personPage
-  //  }
-
-    Image {
-        source: '../img/mainpage.png'
-        width: 180
-            fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
-            smooth: true
-
-    }
-
+Q_DECL_EXPORT int main(int argc, char *argv[])
+{
+    // SailfishApp::main() will display "qml/template.qml", if you need more
+    // control over initialization, you can use:
+    //
+    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
+    //   - SailfishApp::createView() to get a new QQuickView * instance
+    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
+    //
+    // To display the view, call "show()" (will show fullscreen on device).
+    qmlRegisterType<FileIO, 1>("FileIO", 1, 0, "FileIO");
+    return SailfishApp::main(argc, argv);
 }
-
-
