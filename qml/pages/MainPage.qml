@@ -165,8 +165,8 @@ Page {
                     visible: false
                     width: parent.width
                     inputMethodHints: Qt.ImhDialableCharactersOnly
-                    label: "Phone Number"
-                    placeholderText: "Phone number"
+                    label: qsTr("Phone Number")
+                    placeholderText: qsTr("Phone number")
                     placeholderColor: Theme.highlightColor
                     color: Theme.highlightColor
                     horizontalAlignment: textAlignment
@@ -179,8 +179,8 @@ Page {
                     visible: false
                     width: parent.width
                     inputMethodHints: Qt.ImhDialableCharactersOnly
-                    label: "Without + or 00"
-                    placeholderText: "Country Code"
+                    label: qsTr("Without + or 00")
+                    placeholderText: qsTr("Country Code")
                     placeholderColor: Theme.highlightColor
                    color: Theme.highlightColor
                     horizontalAlignment: textAlignment
@@ -205,9 +205,9 @@ Page {
                 Button {
                     id: send_url_callerPy
                     visible: false
-                    text: "Search"
+                    text: qsTr("Search")
                     anchors.horizontalCenter: parent.horizontalCenter
-                    onClicked: pageStack.push(Qt.resolvedUrl('CallerPy/ResultPage.qml'), {url_send:"http://www.callerpy.com/api/v2/REST?id=&number="+phone_number.text+"&cc="+code.text})
+                    onClicked: pageStack.push(Qt.resolvedUrl('CallerPy/ResultPage.qml'), {url_send:"http://www.callerpy.com/api/v2/REST?id=iuYqiqyLsezWeFs8eGoPBO4ayS8hTZqhTu1j6k&number="+phone_number.text+"&cc="+code.text})
                 }
             }
 
