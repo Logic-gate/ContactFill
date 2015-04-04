@@ -198,6 +198,21 @@
     <message>
         <source>About</source>
         <translation>Om</translation>
+	<message>
+		<source>Phone Number</source>
+		<translation type="Telefonnummer"></translation>
+	</message>
+	<message>
+		<source>Phone number</source>
+		<translation type="Telefonnummer"></translation>
+	</message>
+	<message>
+		<source>Without + or 00</source>
+		<translation type="Utan + eller 00"></translation>
+	</message>
+	<message>
+		<source>Country Code</source>
+		<translation type="Landskod"></translation>
     </message>
 </context>
 <context>
