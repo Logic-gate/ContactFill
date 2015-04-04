@@ -200,19 +200,19 @@
         <translation>Om</translation>
     <message>
 	<source>Phone Number</source>
-	<translation type="Telefonnummer"></translation>
+	<translation>Telefonnummer</translation>
     </message>
     <message>
 	<source>Phone number</source>
-	<translation type="Telefonnummer"></translation>
+	<translation>Telefonnummer</translation>
     </message>
     <message>
 	<source>Without + or 00</source>
-	<translation type="Utan + eller 00"></translation>
+	<translation>Utan + eller 00</translation>
     </message>
     <message>
 	<source>Country Code</source>
-	<translation type="Landskod"></translation>
+	<translation>Landskod</translation>
     </message>
 </context>
 <context>
