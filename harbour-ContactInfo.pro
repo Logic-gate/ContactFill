@@ -21,7 +21,6 @@ OTHER_FILES += qml/harbour-ContactInfo.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
     qml/pages/SecondPage.qml \
-    rpm/harbour-ContactInfo.changes.in \
     rpm/harbour-ContactInfo.spec \
     rpm/harbour-ContactInfo.yaml \
     translations/*.ts \
@@ -34,7 +33,8 @@ OTHER_FILES += qml/harbour-ContactInfo.qml \
     qml/pages/MainPage.qml \
     qml/pages/AboutPage.qml \
     qml/pages/CallerPy/CallerPyAbout.qml \
-    qml/pages/ContactFill/ContactFillAbout.qml
+    qml/pages/ContactFill/ContactFillAbout.qml \
+    rpm/harbour-ContactInfo.changes
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -44,7 +44,7 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-ContactInfo-de.ts
+TRANSLATIONS += translations/harbour-ContactInfo-sv.ts
 
 HEADERS += \
     src/fileio.h
