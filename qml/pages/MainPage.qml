@@ -79,25 +79,10 @@ Page {
                         Text {id: email
                                 text: qsTr('Email')
                             visible: false}
-                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='email='; header.title= email.text; field.label='Email Address'; field.placeholderText=qsTr("Search by ")+email.text; column.visible=true; field.inputMethodHints= Qt.ImHints}
+                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='email='; header.title= email.text; field.label='Email Address'; field.placeholderText=qsTr("Search by ")+email.text; column.visible=true; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-cover-email-background.png'}
                     }
 
-                   MenuItem {
-                       Image {
 
-                               source: '/usr/share/themes/jolla-ambient/meegotouch/icons/icon-m-phone.png'
-                                   fillMode: Image.PreserveAspectFit
-                                   anchors.centerIn: parent
-                                   smooth: true
-
-                           }
-
-                      Text{ id: phone
-                         text: qsTr('Phone')
-                         visible: false}
-                               onClicked: {send_url.visible=false; field.visible=false; column.visible=true; phone_number.visible=true; code.visible=true; send_url_callerPy.visible=true; header.title=phone.text}
-
-               }
                     MenuItem { Image {
 
                             source: '/usr/share/themes/jolla-ambient/meegotouch/icons/icon-lock-twitter.png'
@@ -109,7 +94,7 @@ Page {
                         Text {id: twitter
                                 text: qsTr('Twitter')
                             visible: false}
-                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='twitter='; header.title= twitter.text; field.label='Twitter Handel'; column.visible=true; field.placeholderText=qsTr("Search By ")+twitter.text; field.inputMethodHints= Qt.ImHints}
+                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='twitter='; header.title= twitter.text; field.label='Twitter Handel'; column.visible=true; field.placeholderText=qsTr("Search By ")+twitter.text; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-service-twitter.png'}
 
                 }
                     MenuItem {Image {
@@ -123,7 +108,23 @@ Page {
                         Text {id: facebook
                                 text: qsTr('Facebook')
                             visible: false}
-                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='facebookUsername='; header.title= facebook.text; field.label='Facebook Name'; column.visible=true; field.placeholderText=qsTr("Search By ")+facebook.text; field.inputMethodHints= Qt.ImHints}
+                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='facebookUsername='; header.title= facebook.text; field.label='Facebook Name'; column.visible=true; field.placeholderText=qsTr("Search By ")+facebook.text; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-service-facebook.png'}
+
+                }
+                    MenuItem {
+                        Image {
+
+                                source: '/usr/share/themes/jolla-ambient/meegotouch/icons/icon-m-phone.png'
+                                    fillMode: Image.PreserveAspectFit
+                                    anchors.centerIn: parent
+                                    smooth: true
+
+                            }
+
+                       Text{ id: phone
+                          text: qsTr('Phone')
+                          visible: false}
+                                onClicked: {send_url.visible=false; field.visible=false; column.visible=true; phone_number.visible=true; code.visible=true; send_url_callerPy.visible=true; header.title=phone.text; mainimage.source='../img/phone.png'}
 
                 }
                 }
