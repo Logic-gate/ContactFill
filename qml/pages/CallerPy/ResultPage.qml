@@ -27,7 +27,7 @@ SilicaFlickable {
         width: parent.width
         PageHeader {
             id: result_header
-            title: "Result"
+            title: qsTr("Result")
             visible: false
 
         }
@@ -39,7 +39,7 @@ SilicaFlickable {
 
         SectionHeader {
             id: name_header
-            text: "Name"
+            text: qsTr("Name")
             visible: false
         }
 
@@ -57,7 +57,7 @@ SilicaFlickable {
             }
             currentIndex: -1
             menu: ContextMenu {
-                MenuItem { text: "Copy"
+                MenuItem { text: qsTr("Copy")
                 onClicked: {Clipboard.text = name_.text; text=' '}}
             }
         }
@@ -65,7 +65,7 @@ SilicaFlickable {
 
         SectionHeader {
             id: number_header
-            text: "Number"
+            text: qsTr("Number")
             visible: false
         }
 
@@ -80,7 +80,7 @@ SilicaFlickable {
            }
            currentIndex: -1
            menu: ContextMenu {
-               MenuItem { text: "Copy"
+               MenuItem { text: qsTr("Copy")
                onClicked: {Clipboard.text = number_.text; text=' '}}
            }
        }
@@ -88,7 +88,7 @@ SilicaFlickable {
 
         SectionHeader {
             id: country_header
-            text: "Country"
+            text: qsTr("Country")
             visible: false
         }
         Label {

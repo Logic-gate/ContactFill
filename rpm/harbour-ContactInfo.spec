@@ -14,10 +14,10 @@ Name:       harbour-ContactInfo
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    ContactFill is contact information utility based on FullContact and Truecaller.
 Version:    0.1
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    LICENSE
-URL:        http://example.org/
+URL:        http://sysbase.org
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-ContactInfo.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9

@@ -79,7 +79,7 @@ Page {
                         Text {id: email
                                 text: qsTr('Email')
                             visible: false}
-                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='email='; header.title= email.text; field.label='Email Address'; field.placeholderText=qsTr("Search by ")+email.text; column.visible=true; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-cover-email-background.png'}
+                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='email='; header.title= email.text; field.label=qsTr('Email Address'); field.placeholderText=qsTr("Search by ")+email.text; column.visible=true; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-cover-email-background.png'}
                     }
 
 
@@ -94,7 +94,7 @@ Page {
                         Text {id: twitter
                                 text: qsTr('Twitter')
                             visible: false}
-                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='twitter='; header.title= twitter.text; field.label='Twitter Handel'; column.visible=true; field.placeholderText=qsTr("Search By ")+twitter.text; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-service-twitter.png'}
+                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='twitter='; header.title= twitter.text; field.label=qsTr('Twitter Handel'); column.visible=true; field.placeholderText=qsTr("Search By ")+twitter.text; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-service-twitter.png'}
 
                 }
                     MenuItem {Image {
@@ -108,7 +108,7 @@ Page {
                         Text {id: facebook
                                 text: qsTr('Facebook')
                             visible: false}
-                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='facebookUsername='; header.title= facebook.text; field.label='Facebook Name'; column.visible=true; field.placeholderText=qsTr("Search By ")+facebook.text; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-service-facebook.png'}
+                               onClicked: {send_url_callerPy.visible=false; code.visible=false; phone_number.visible=false; send_url.visible=true; field.visible=true; hidden_field.text='facebookUsername='; header.title= facebook.text; field.label=qsTr('Facebook Name'); column.visible=true; field.placeholderText=qsTr("Search By ")+facebook.text; field.inputMethodHints= Qt.ImHints; mainimage.source='/usr/share/themes/jolla-ambient/meegotouch/icons/graphic-service-facebook.png'}
 
                 }
                     MenuItem {

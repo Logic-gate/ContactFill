@@ -46,6 +46,18 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-ContactInfo-sv.ts
 
+localization.files = translations
+localization.path = /usr/share/$${TARGET}
+
+INSTALLS += localization
+
+lupdate_only {
+SOURCES = qml/*.qml \
+qml/pages/*.qml
+TRANSLATIONS = translations/harbour-ContactInfo-sv.ts
+}
+
+
 HEADERS += \
     src/fileio.h
 

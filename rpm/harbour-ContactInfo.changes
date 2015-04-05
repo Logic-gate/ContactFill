@@ -8,8 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Apr 5 2015 Amer Almadani <mad_dev@linuxmil.org> 0.0.1-3
+- Fixed missing strings
+- Fixed Swedish Translation
+
 * Sat Apr 4 2015 Amer Almadani <mad_dev@linuxmail.org> 0.0.1-2
 - Swedish translation - thanks to eson57
 - Added method icons
+
 
 

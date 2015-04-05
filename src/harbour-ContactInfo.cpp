@@ -36,6 +36,7 @@
 #include <sailfishapp.h>
 #include "fileio.h"
 #include <QtQml>
+#include <QGuiApplication>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -48,5 +49,14 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
     qmlRegisterType<FileIO, 1>("FileIO", 1, 0, "FileIO");
+
+    QGuiApplication* app = SailfishApp::application(argc, argv);
+    QString locale = QLocale::system().name();
+
+    QTranslator translator;
+
+    translator.load(locale,SailfishApp::pathTo(QString("translation")).toLocalFile());
+    app->installTranslator(&translator);
+
     return SailfishApp::main(argc, argv);
 }

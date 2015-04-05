@@ -215,6 +215,18 @@
         <source>Country Code</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Email Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Twitter Handel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Facebook Name</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PersonPage</name>
@@ -260,6 +272,29 @@
     </message>
     <message>
         <source>Bad Request, Please try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ResultPage</name>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
