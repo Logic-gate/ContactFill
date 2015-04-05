@@ -291,7 +291,7 @@
 	</message>
 	<message>
 		<source>Number</source>
-		<translation>Nummer<translation>
+		<translation>Nummer</translation>
 	</message>
 	<message>
 		<source>Country</source>
