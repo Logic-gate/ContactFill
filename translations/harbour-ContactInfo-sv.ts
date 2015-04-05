@@ -198,22 +198,35 @@
     <message>
         <source>About</source>
         <translation>Om</translation>
-    <message>
-	<source>Phone Number</source>
-	<translation>Telefonnummer</translation>
     </message>
     <message>
-	<source>Phone number</source>
-	<translation>Telefonnummer</translation>
+        <source>Phone Number</source>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
-	<source>Without + or 00</source>
-	<translation>Utan + eller 00</translation>
+        <source>Phone number</source>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
-	<source>Country Code</source>
-	<translation>Landskod</translation>
+        <source>Without + or 00</source>
+        <translation>Utan + eller 00</translation>
     </message>
+    <message>
+        <source>Country Code</source>
+        <translation>Landskod</translation>
+    </message>
+	<message>
+		<source>Email Address</source>
+		<translation>E-postadress</translation>
+	</message>
+	<message>
+		<source>Twitter Handel</source>
+		<translation>Twitter-profil</translation>
+	</message>
+	<message>
+		<source>Facebook Name</source>
+		<translation>Facebook-namn</translation>
+	</message>
 </context>
 <context>
     <name>PersonPage</name>
@@ -261,6 +274,29 @@
         <source>Bad Request, Please try again</source>
         <translation>Felaktig förfrågan, försök igen</translation>
     </message>
+</context>
+<context>
+	<name>ResultPage</name>
+	<message>
+		<source>Result</source>
+		<translation>Resultat</translation>
+	</message>
+	<message>
+		<source>Name</source>
+		<translation>Namn</translation>
+	</message>
+	<message>
+		<source>Copy</source>
+		<translation>Kopiera</translation>
+	</message>
+	<message>
+		<source>Number</source>
+		<translation>Nummer</translation>
+	</message>
+	<message>
+		<source>Country</source>
+		<translation>Land</translation>
+	</message>
 </context>
 <context>
     <name>api</name>
